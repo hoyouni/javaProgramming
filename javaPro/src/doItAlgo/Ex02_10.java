@@ -1,0 +1,60 @@
+package doItAlgo;
+
+// 100 이하의 소수 열거 (개선)
+public class Ex02_10 {
+	public static void main(String[] args) {
+		int cnt = 0;
+		int ptr = 0;
+		int[] prime = new int[50];
+		
+		prime[ptr++] = 2; // ptr = 0 에서 1이 됨
+		
+		for(int n = 3; n <= 100; n+=2) {
+			int i;
+			for(i = 1; i < ptr; i++) {
+				cnt++;
+				if(n % prime[i] == 0) 
+					break;
+			}
+			
+			if(ptr == i) 
+				prime[ptr++] = n;
+		}
+		
+		for(int i = 0; i < ptr; i++) {
+			System.out.print(prime[i] + " ");
+		}
+		System.out.println();
+		System.out.println("나눗셈 횟수 : " + cnt);
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
